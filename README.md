@@ -4,7 +4,7 @@
 
 * Log in to your github and fork this project to your github
 
-## illustrate
+## Instructions
 ### 1. Create token
 Go to your `repo settings > Developer settings > Personal access tokens > Generate new token`
 - `note`: fill in RELEASE
