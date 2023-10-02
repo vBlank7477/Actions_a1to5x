@@ -1,4 +1,4 @@
-# You only need the A1 ROM link to port the ROM to the 5x
+# Port ROM Mi A1 (Tissot) to Mi 5x (Tiffany)
  
 **How to use a1to5x to convert a1 package into 5x usable flash package**
 
