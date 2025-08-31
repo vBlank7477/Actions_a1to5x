@@ -93,15 +93,18 @@ jobs:
           echo "filename=$FILENAME" >> $GITHUB_OUTPUT
           echo "name=$NAME" >> $GITHUB_OUTPUT
 
-      - name: Payload Extracting
+      - name: Rom Extracting
         run: |
-          echo "Payload Extracting"
+          echo "Unziping Rom"
           echo "filename: ${{ steps.var.outputs.filename }}"
-          unzip ${{ steps.var.outputs.filename }} payload.bin
+          unzip -q ${{ steps.var.outputs.filename }} -d temp_rom/
+          # Moving images to output
+          mv temp_rom/boot.img output/boot.img
+          mv temp_rom/system.img output/system.img
+          mv temp_rom/vendor.img output/vendor.img
+          echo "Extraction complete."
+          rm -rf temp_rom/
           rm -rf ${{ steps.var.outputs.filename }}
-          python3 update-payload-extractor/extract.py payload.bin --output_dir output/
-          rm -rf payload.bin
-          ls
 
       - name: Fstab Patching
         run: |
