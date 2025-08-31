@@ -14,6 +14,10 @@ show_progress(0.040000, 0);
 package_extract_file("system.img", "/dev/block/bootdevice/by-name/system") ||
   abort("E1001: Failed to flash system image.");
 #
+ui_print("- Flashing vendor image");
+package_extract_file("vendor.img", "/dev/block/bootdevice/by-name/vendor") ||
+  abort("E1001: Failed to flash vendor image.");
+#
 ui_print("- Flashing boot image");
 show_progress(0.090000, 0);
 package_extract_file("boot.img", "/dev/block/bootdevice/by-name/boot");
