@@ -108,17 +108,17 @@ jobs:
 
       - name: Fstab Patching
         run: |
-            echo "system"
+            echo "vendor"
             echo "**************************************"
-            ls -al
-            echo "**************************************"
-            ls -al output/system.img
-            sudo mkdir system
-            sudo mount output/system.img system
-            sudo du -sb system
-            cat system/system/vendor/etc/fstab.qcom
-            sudo cp -f system/system/vendor/etc/fstab.qcom fstab.qcom
-            fstab="system/system/vendor/etc/fstab.qcom"
+            #ls -al
+            #echo "**************************************"
+            ls -al output/vendor.img
+            sudo mkdir vendor
+            sudo mount output/vendor.img vendor
+            sudo du -sb vendor
+            cat vendor/etc/fstab.qcom
+            sudo cp -f vendor/etc/fstab.qcom fstab.qcom
+            fstab="vendor/etc/fstab.qcom"
             echo "**************************************"
             ls -al $fstab
             echo "**************************************"
@@ -211,16 +211,16 @@ jobs:
                 ls -al $fstab
                 echo "**************************************"
             fi
-            cat system/system/vendor/etc/fstab.qcom
-            sudo cp system/system/vendor/etc/fstab.qcom output/fstab.qcom
+            cat vendor/etc/fstab.qcom
+            sudo cp vendor/etc/fstab.qcom output/fstab.qcom
             echo "fstab修补中"
             echo "**************************************"
             diff fstab.qcom output/fstab.qcom || true
             echo "**************************************"
-            sudo du -sb system
-            sudo umount system
-            sudo rm -rf system
-            ls -al output/system.img
+            sudo du -sb vendor
+            sudo umount vendor
+            sudo rm -rf vendor
+            ls -al output/vendor.img
 
       - name: Patching boot
         run: |
