@@ -329,6 +329,7 @@ jobs:
         run: |
           cp output/boot.img template/boot.img
           mv output/system.img template/system.img
+          mv output/vendor.img template/vendor.img
           cd template
           echo "**************************************"
           ls -al
