@@ -266,8 +266,13 @@ jobs:
                 ../../fdtput $i /firmware/android/fstab/system type ext4 -ts
                 ../../fdtput $i /firmware/android/fstab/system dev /dev/block/platform/soc/7824900.sdhci/by-name/system -ts
                 ../../fdtput $i /firmware/android/fstab/system compatible android,system -ts
+               # Config for Vendor
+                ../../fdtput $i /firmware/android/fstab/vendor status ok -ts
                 ../../fdtput $i /firmware/android/fstab/vendor fsmgr_flags wait -ts
-                ../../fdtput $i /firmware/android/fstab/vendor status disable -ts
+                ../../fdtput $i /firmware/android/fstab/vendor mnt_flags ro,nosuid,nodev -ts
+                ../../fdtput $i /firmware/android/fstab/vendor compatible android,vendor -ts
+                ../../fdtput $i /firmware/android/fstab/vendor type ext4 -ts
+                ../../fdtput $i /firmware/android/fstab/vendor dev /dev/block/bootdevice/by-name/vendor -ts
                 echo "列出android下的节点"
                 ../../fdtget $i /firmware/android/vbmeta -l 2>/dev/null || true
                 ../../fdtget $i /firmware/android/vbmeta parts 2>/dev/null || true
