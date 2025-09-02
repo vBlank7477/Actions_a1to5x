@@ -1,6 +1,6 @@
 # Port ROM Mi A1 (Tissot) to Mi 5x (Tiffany)
  This fork ONLY WORK with roms that have boot.img system.img and vendor.img in the rom of A1
- Dont use with roms with payload.bin (check the files you gonna port)
+                         Dont use with roms with payload.bin (check the files you gonna port)
  
 **How to use a1to5x to convert a1 package into 5x usable flash package**
 
