@@ -1,4 +1,5 @@
 # Port ROM Mi A1 (Tissot) to Mi 5x (Tiffany): IMG Files Method (No Payload.bin)
+## Project status: Untested
  This fork has been updated to port ROMs from the Mi A1 (Tissot) to Mi 5x (Tiffany) that contain the boot.img, system.img, and vendor.img files. It is no longer compatible with ROMs that use the payload.bin file.
  
 **How to use a1to5x to convert a1 package into 5x usable flash package**
